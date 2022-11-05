@@ -9,7 +9,52 @@ app.use(cors())
 app.use(express.json())
 
 const users = []
-const tweets = []
+const tweets = [
+    {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "11"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "10"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "9"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "8"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "Tweet 7"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "Tweet 6"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "Tweet 5"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "Tweet 4"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "Tweet 3"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "Tweet 2"
+    }, {
+        username: "bobesponja",
+        avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+        tweet: "Tweet 1"
+    }]
 
 app.post("/sign-up", (req, res) => {
     const { username, avatar } = req.body
@@ -44,12 +89,12 @@ app.post("/tweets", (req, res) => {
             temConta = true
             console.log("Tem conta")
             return object.username
-        } else{
+        } else {
             console.log("Não tem conta")
         }
     })
 
-    if(!temConta || !username || !tweet){
+    if (!temConta || !username || !tweet) {
         return res.send("Por favor, verifique os dados")
     }
 
@@ -67,12 +112,12 @@ app.post("/tweets", (req, res) => {
 app.get("/tweets", (req, res) => {
     const lastTweets = []
 
-    for(let i = 1; i <= 10; i++){
-        lastTweets.push(tweets[tweets.length-i])
+    for (let i = 1; i <= 10; i++) {
+        lastTweets.push(tweets[tweets.length - i])
     }
-    
+
     res.send(lastTweets)
 })
- 
+
 
 app.listen(5000, () => { console.log("Server Online") })
