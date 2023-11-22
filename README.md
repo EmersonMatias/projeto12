@@ -3,7 +3,7 @@ Tweteroo é um projeto de API que replica algumas funcionalidades do Twitter. Es
 
 🟡Nessa aplicação os dados do usuário são salvos em variáveis globais em memória, ou seja, eles não persistem caso o servidor encerrar.
 
-#### Formato do ```user```
+### Formato do ```user```
 
 ```javascript
   {
@@ -11,7 +11,7 @@ Tweteroo é um projeto de API que replica algumas funcionalidades do Twitter. Es
     avatar: "url_image_avatar"
   }
 ```
-#### Formato do ```tweet```
+### Formato do ```tweet```
 
 ```javascript
   {
@@ -24,11 +24,11 @@ Tweteroo é um projeto de API que replica algumas funcionalidades do Twitter. Es
 * Recebe pelo body um objeto do tipo ```user``` e valida se os valores não estão vazios, caso esteja, retornará ```status code 404```, caso não esteja salva o user em um array de usuários do servidor.
 * Response: ```"OK"```
 
-#### 🟠 POST ```/tweets```
+### 🟠 POST ```/tweets```
 * Recebe pelo body um objeto do tipo ```tweets``` e valida se os valores não estão vazios, caso esteja, retornará ```status code 404```, caso não esteja salva o tweet em um array de tweets do servidor.
 * Response: ```"OK"```
 
-#### 🟢 GET ```/tweets```
+### 🟢 GET ```/tweets```
 * Retorna os 10 últimos tweets publicados
 ```javascript
   [
