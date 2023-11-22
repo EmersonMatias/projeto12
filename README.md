@@ -1,25 +1,45 @@
-*************** POST SIGN-UP ******************
-1. Verifica se o URL é valido
-    a) Caso não seja, ele não permite a criação da conta
-2. Verifica se o campo do username é vazio
-    a) Caso esteja, ele não permite a criação da conta
+# Projeto 12 - API Tweteroo
+Tweteroo é um projeto de API que replica algumas funcionalidades do Twitter. Este projeto foi desenvolvido como um exercício de construção de um back-end completo para uma aplicação front end.
 
+🟡Nessa aplicação os dados do usuário são salvos em variáveis globais em memória, ou seja, eles não persistem caso o servidor encerrar.
 
-*************** POST TWEETS ******************
-1. Verifica se o usuario tem conta criada
-    a) Caso não tenha, ele não permitira a publicação de tweets
-2. Verifica se o tweet é vazio
-    a) Caso seja, ele não permite a publicação do tweet
-3. Verifica se o username enviado no body é vazio
-    a) Caso seja, ele não permite a publicação do tweet
+#### Formato do ```user```
 
-*************** GET TWEETS ******************
-1. Retorna os ultimos 10 tweets da lista de todos os tweets
+```javascript
+  {
+    username: "nome_do_usuario",
+    avatar: "url_image_avatar"
+  }
+```
+#### Formato do ```tweet```
 
+```javascript
+  {
+    username: "nome_do_usuario",
+    tweet: "tweet do usuario"
+  }
+```
 
-*************** TESTES ******************
-1. Caso você tenha criado a conta uma vez é possivel entrar novamente
-apenas pelo username, sem a necessidade da URL da imagem. No entanto,
-não é possível alterar a imagem posteriormente.
+#### 🟠 POST ```/signup```
+* Recebe pelo body um objeto do tipo ```user``` e valida se os valores não estão vazios, caso esteja, retornará ```status code 404```, caso não esteja salva o user em um array de usuários do servidor.
+* Response: ```"OK"```
 
+#### 🟠 POST ```/tweets```
+* Recebe pelo body um objeto do tipo ```tweets``` e valida se os valores não estão vazios, caso esteja, retornará ```status code 404```, caso não esteja salva o tweet em um array de tweets do servidor.
+* Response: ```"OK"```
 
+#### 🟢 GET ```/tweets```
+* Retorna os 10 últimos tweets publicados
+```javascript
+  [
+	{
+		username: "bobesponja",
+			"vatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?  quality=70&strip=info",
+		  tweet: "eu amo o hub"
+	}
+]
+```
+
+### As principais tecnologias e conceitos aplicados nesse projeto incluem:
+* Node.js
+* Express.js
