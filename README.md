@@ -20,7 +20,7 @@ Tweteroo é um projeto de API que replica algumas funcionalidades do Twitter. Es
   }
 ```
 
-#### 🟠 POST ```/signup```
+### 🟠 POST ```/signup```
 * Recebe pelo body um objeto do tipo ```user``` e valida se os valores não estão vazios, caso esteja, retornará ```status code 404```, caso não esteja salva o user em um array de usuários do servidor.
 * Response: ```"OK"```
 
