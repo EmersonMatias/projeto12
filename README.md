@@ -1,4 +1,4 @@
-# Projeto 12 - API Tweteroo
+# Projeto 12 - API Tweteroo (Driven)
 Tweteroo é um projeto de API que replica algumas funcionalidades do Twitter. Este projeto foi desenvolvido como um exercício de construção de um back-end completo para uma aplicação front end.
 
 🟡Nessa aplicação os dados do usuário são salvos em variáveis globais em memória, ou seja, eles não persistem caso o servidor encerrar.
